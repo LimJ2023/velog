@@ -4,8 +4,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 //게터 세터 자동 생성해줌
-record Person (String name, int age, Address address){};
-record Address (String firstLine, String city){};
+record Person (String name, int age, Address address){}
+record Address (String firstLine, String city){}
 @Configuration
 public class HelloWorldConfiguration {
     @Bean
