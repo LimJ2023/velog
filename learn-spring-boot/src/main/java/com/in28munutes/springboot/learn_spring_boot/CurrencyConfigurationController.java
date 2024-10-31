@@ -1,6 +1,7 @@
 package com.in28munutes.springboot.learn_spring_boot;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,16 +16,13 @@ import java.util.List;
 //        "author": "in28minutes"
 //    }]
 
-//REST API를 위한 어노테이션.
 @RestController
-public class CourseController {
+public class CurrencyConfigurationController {
 
-    @RequestMapping("/courses")
-    public List<Course> retrieveAllCourses() {
-        return Arrays.asList(
-                new Course(1,"Learn AWS","in28minutes"),
-                new Course(2,"Learn DevOps","in28minutes"),
-                new Course(3,"Learn Azure","in28minutes")
-        );
+    @Autowired
+    private CurrencyServiceConfiguration configuration;
+    @RequestMapping("/currency-configuration")
+    public CurrencyServiceConfiguration retrieveAllCourses() {
+        return configuration;
     }
 }
