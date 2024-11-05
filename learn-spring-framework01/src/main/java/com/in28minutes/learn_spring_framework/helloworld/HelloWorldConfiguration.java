@@ -1,5 +1,6 @@
 package com.in28minutes.learn_spring_framework.helloworld;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -8,9 +9,9 @@ record Person (String name, int age, Address address){}
 record Address (String firstLine, String city){}
 @Configuration
 public class HelloWorldConfiguration {
-    @Bean
-    public String name(){
-        return"name객체관리";
+    @Autowired
+    private String name(){
+        return "name";
     }
     @Bean
     public int age(){
